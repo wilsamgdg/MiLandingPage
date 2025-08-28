@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Samuel Nivia Torres</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #1d3557;
+            --accent: #fca311;
+            --light: #f1faee;
+            --dark: #14213d;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        header {
+            background: linear-gradient(rgba(29, 53, 87, 0.9), rgba(29, 53, 87, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .subtitle {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            animation: fadeIn 2s ease;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeIn 2.5s ease;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--accent);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            margin: 2rem auto;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin: 5rem 0;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-size: 2.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hobbies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .hobby-card {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .hobby-card:nth-child(2) {
+            border-top-color: var(--secondary);
+        }
+        
+        .hobby-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+        
+        .hobby-card:nth-child(4) {
+            border-top-color: #2a9d8f;
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hobby-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .hobby-card:hover .hobby-icon {
+            transform: scale(1.2);
+        }
+        
+        .hobby-card:nth-child(2) .hobby-icon {
+            color: var(--secondary);
+        }
+        
+        .hobby-card:nth-child(3) .hobby-icon {
+            color: var(--accent);
+        }
+        
+        .hobby-card:nth-child(4) .hobby-icon {
+            color: #2a9d8f;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-link:hover::before {
+            opacity: 1;
+        }
+        
+        .social-link i {
+            position: relative;
+            z-index: 2;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .martial-arts-icon {
+            font-size: 2rem;
+            animation: spin 3s linear infinite;
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: var(--accent);
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            section {
+                padding: 2rem 1.5rem;
+                margin: 3rem 0;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .profile-img {
+                width: 170px;
+                height: 170px;
+            }
+            
+            section {
+                padding: 1.5rem 1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hobbies {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
+            
+            .social-link {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">GRIKURA</div>
+            <h1>Wilson Samuel Nivia Torres</h1>
+            <p class="subtitle">Creador de Contenido · Artista Marcial · Gymrat</p>
+            <p class="tagline">Soy un joven apasionado por superarme y crecer en distintos ámbitos de la vida</p>
+            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80" alt="Wilson Samuel Nivia Torres" class="profile-img">
+            
+            <nav class="nav-menu">
+                <a href="#about">Sobre Mí</a>
+                <a href="#hobbies">Pasatiempos</a>
+                <a href="#gallery">Galería</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy Wilson Samuel Nivia Torres, un joven apasionado por superarme y crecer en distintos ámbitos de la vida. Desde muy temprano descubrí en el deporte una forma de disciplina, energía y propósito. Hoy en día entreno en el gimnasio, practico jiu jitsu y lucha greco-romana, artes marciales que me enseñan a ser constante, fuerte y resiliente tanto dentro como fuera del tatami.</p>
+                    <p>Más allá del deporte, me motiva la creatividad. Me encanta explorar el mundo de la creación de contenido, la fotografía y todo lo que tenga que ver con expresar ideas de manera única y auténtica. Siempre busco nuevas formas de transmitir lo que pienso y siento, ya sea a través de imágenes, videos o proyectos que reflejen mi visión.</p>
+                    <p>Soy una persona inquieta, con espíritu emprendedor, que no se conforma con lo básico. Me impulsa la idea de construir, crear y dejar huella, combinando mi pasión por el deporte, el arte y la creatividad en un camino que apenas comienza, pero que tiene todo el potencial para llegar lejos.</p>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-text">Años Entrenando</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-text">Proyectos Creados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-text">Artes Marciales</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-text">Marca Personal</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="hobbies">
+            <h2>Mis Pasatiempos <span class="martial-arts-icon">🥋</span></h2>
+            <div class="hobbies">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Entrenar en el Gimnasio</h3>
+                    <p>Me apasiona el fitness, mejorar mi fuerza y trabajar constantemente en mi disciplina física y mental.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <h3>Jiu Jitsu y Lucha Greco-Romana</h3>
+                    <p>Disfruto entrenar artes marciales, aprender nuevas técnicas y poner a prueba mi resistencia y estrategia.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Fotografía y Creación de Contenido</h3>
+                    <p>Me encanta capturar momentos, crear ideas visuales y explorar mi lado creativo a través de fotos y videos.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Emprender con Grikura</h3>
+                    <p>Una de mis mayores motivaciones es mi marca Grikura, un proyecto en el que combino creatividad, disciplina y visión para crecer en el mundo del emprendimiento.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <h2>Mis fotoss jeje</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="blob:https://web.whatsapp.com/f676a0c6-af0a-4717-823a-2328b824029b" alt="Entrenamiento">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549060279-7e168fce7090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Artes marciales">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Fotografía">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80" alt="Emprendimiento">
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Conectemos</h2>
+            <p>Si compartes mis pasiones o quieres colaborar en algún proyecto, ¡no dudes en contactarme!</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/will_torresz?igsh=MWdkZXhsZDY5bHY5ZA==" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@will_torresz?_t=ZS-8zDzD1S1Usi&_r=1" class="social-link">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1CTyvxgA9k/" class="social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2023 Wilson Samuel Nivia Torres - Creador de Contenido, Artista Marcial y Emprendedor</p>
+        <p>Marca Personal: <strong>Grikura</strong></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animación de las tarjetas de hobbies al hacer scroll
+            const hobbyCards = document.querySelectorAll('.hobby-card');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const statItems = document.querySelectorAll('.stat-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            hobbyCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            galleryItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'scale(0.9)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+            
+            statItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+            
+            // Animación de contador para stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const duration = 2000; // 2 seconds
+            const frameRate = 30; // 30 frames per second
+            
+            statNumbers.forEach(statNumber => {
+                const target = parseInt(statNumber.textContent);
+                let current = 0;
+                const increment = Math.ceil(target / (duration / frameRate));
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    statNumber.textContent = current + '+';
+                }, 1000 / frameRate);
+            });
+        });
+    </script>
+</body>
+</html>
